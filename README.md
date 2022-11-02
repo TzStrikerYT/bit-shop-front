@@ -1,4 +1,4 @@
-# Do it npm before run this project !!!
+# Do it "npm i" before run this project !!!
 
 # BitShopFront
 
