@@ -1,0 +1,25 @@
+<div class="card m-3" style="width: 18rem">
+  <img src="{{ this.image }}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ this.title }}</h5>
+    <p class="card-text">
+      {{ this.description }}
+    </p>
+
+    <a
+      *ngIf="this.stock && this.stock > 0; else noStock"
+      (click)="this.buy()"
+      class="btn btn-{{ this.btnColor }}"
+      >{{ this.btnText }}</a
+    >
+
+    <ng-template #noStock>
+      <a class="btn btn-secondary">Stock no disponible</a>
+    </ng-template>
+
+    <ng-template #adriana>
+    </ng-template>
+
+    <!-- <a *ngIf="condicion" (click)="this.buy()" class="btn btn-{{this.btnColor}}">{{this.btnText}}</a> -->
+  </div>
+</div>

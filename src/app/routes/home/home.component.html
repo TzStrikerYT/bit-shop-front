@@ -1,1 +1,25 @@
-<p>home works!</p>
+<div class="container mt-5 d-flex justify-contnet-evenly flex-wrap">
+  <!-- card component -->
+  <!-- props -->
+  <app-card
+    *ngFor="let le of [1,2,3,4,5]"
+    title="Hola Mundo {{le}}"
+    description="una carta que saluda"
+    btnColor="success"
+    btnText="comprar"
+    image="https://www.soymotero.net/sites/default/files/styles/max_width_800px/public/2014-11/2015_YAM_YZF1000R1_EU_MS1RB_STU_001_03.jpg"
+    [stock]="10"
+  ></app-card>
+
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a *ngFor="let le of [1,2,3]" href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
