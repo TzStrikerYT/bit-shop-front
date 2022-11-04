@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.bg-primary-gradient {
+  background: rgb(13, 0, 24);
+  background: linear-gradient(
+    159deg,
+    rgba(13, 0, 24, 1) 0%,
+    rgba(114, 0, 93, 1) 0%,
+    rgba(72, 0, 147, 1) 96%
+  );
+}
+
+.bg-dark-gray {
+  background-color: rgb(31, 31, 31);
+}

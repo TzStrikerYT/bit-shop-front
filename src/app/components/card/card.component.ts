@@ -12,8 +12,8 @@ export class CardComponent implements OnInit {
   @Input() image: string | undefined
   @Input() btnText: string | undefined
   @Input() btnColor: string | undefined
-  @Input() cardSize: string | undefined
-  @Input() stock: number | undefined
+  // @Input() cardSize: string | undefined
+  // @Input() stock: number | undefined
   // @Input() options: any
   // /*{
   //   title: "",

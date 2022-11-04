@@ -1,25 +1,37 @@
-<div class="container mt-5 d-flex justify-contnet-evenly flex-wrap">
-  <!-- card component -->
-  <!-- props -->
-  <app-card
-    *ngFor="let le of [1,2,3,4,5]"
-    title="Hola Mundo {{le}}"
-    description="una carta que saluda"
-    btnColor="success"
-    btnText="comprar"
-    image="https://www.soymotero.net/sites/default/files/styles/max_width_800px/public/2014-11/2015_YAM_YZF1000R1_EU_MS1RB_STU_001_03.jpg"
-    [stock]="10"
-  ></app-card>
+<div class="bg-dark">
 
-  <div class="card" style="width: 18rem">
-    <img src="..." class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
-      <a *ngFor="let le of [1,2,3]" href="#" class="btn btn-primary">Go somewhere</a>
+  <section>
+    <!-- banner
+  
+    secciones de peliculas 
+  
+    seccion de series
+  
+    recomendados -->
+  
+    <div
+      class="bg-dark d-flex align-items-center justify-content-center"
+      style="height: 38vh"
+    >
+      <p class="text-white fs-1">Bienvenido a lo mejor en entreteniemiento...</p>
     </div>
-  </div>
+  </section>
+  
+  <section class="bg-dark container-fluid">
+    
+    <h3 class="text-white">Peliculas</h3>
+
+    <div class="py-4 d-flex justify-content-center flex-wrap">
+      <app-card
+        *ngFor="let movie of this.moviesDB"
+        title="{{movie.title}}"
+        description="{{movie.description}}"
+        btnText="{{movie.btnText}}"
+        image="{{movie.image}}"
+        btnColor="{{movie.btnColor}}"
+      ></app-card>
+    </div>
+  </section>
+
+
 </div>
