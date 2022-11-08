@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
       description:
         'El ex-militar FRank Castle es traicionado por tal y tal y ahora su deber es buscar venganza, por que la v',
       btnText: 'Ver',
-      image: 'https://blog.tribugame.es/wp-content/uploads/2019/01/The-Punisher-temporada-2-1-1024x556.jpg',
+      image: 'assets/img/yam3-1.jpg',
       btnColor: 'bg-primary-gradient',
       type: 'serie', //movie || serie || documental
     },
