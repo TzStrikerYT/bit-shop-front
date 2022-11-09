@@ -33,7 +33,16 @@ export class AdminComponent implements OnInit {
     console.log("Ejecucion")
 
     if (products || products.length > 0){
-      sortedProducts = products.sort((a: any, b: any) => (a.price > b.price) ? -1 : 1)
+      sortedProducts = products.sort((a: any, b: any) => (a.price < b.price) ? 1 : -1)
+      //({},{}) => ({}.price < {}.price) ? 1 : -1)
+      //if condicion{
+      //  se cumple 
+      //} else {
+      //  no se cumple
+      //}
+
+      //(condicion)? si cumple : si no se cumple
+
       this.productService.products = sortedProducts
       return
     }
