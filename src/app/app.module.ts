@@ -10,6 +10,7 @@ import { SignupComponent } from './routes/signup/signup.component';
 import { AdminComponent } from './routes/admin/admin.component';
 import { Page404Component } from './routes/page404/page404.component';
 import { CardComponent } from './components/card/card.component';
+import { HttpClientModule } from '@angular/common/http' //-- permite consumir apis con el cliente http de angular
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CardComponent } from './components/card/card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule //-- permite consumir apis con el cliente http de angular
   ],
   providers: [],
   bootstrap: [AppComponent]

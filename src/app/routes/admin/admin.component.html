@@ -1,1 +1,20 @@
-<p>admin works!</p>
+<div class="container-fluid px-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Palabras clave</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of this.productService.products.data">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.stock }}</td>
+        <td>@mdo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
