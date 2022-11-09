@@ -3,17 +3,21 @@
     <thead>
       <tr>
         <th>Nombre</th>
-        <th>Precio</th>
+        <th (click)="this.orderByPrice()" style="cursor: pointer;">Precio</th>
         <th>Stock</th>
         <th>Palabras clave</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of this.productService.products.data">
+      <tr *ngFor="let product of this.productService.products">
         <td>{{ product.name }}</td>
         <td>{{ product.price }}</td>
         <td>{{ product.stock }}</td>
-        <td>@mdo</td>
+        <td>
+            <span class="text-primary" *ngFor="let keyword of product.keyWords">{{'#' + keyword + ' ' }}</span>
+        </td>
+        <td></td>
       </tr>
     </tbody>
   </table>
