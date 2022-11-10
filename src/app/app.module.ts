@@ -11,6 +11,7 @@ import { AdminComponent } from './routes/admin/admin.component';
 import { Page404Component } from './routes/page404/page404.component';
 import { CardComponent } from './components/card/card.component';
 import { HttpClientModule } from '@angular/common/http' //-- permite consumir apis con el cliente http de angular
+import { FormsModule } from '@angular/forms'; //-- permite capturar formularios en angular
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http' //-- permite consumir ap
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule //-- permite consumir apis con el cliente http de angular
+    HttpClientModule, //-- permite consumir apis con el cliente http de angular
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
+import { NgForm } from '@angular/forms'
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-admin',
@@ -48,6 +50,21 @@ export class AdminComponent implements OnInit {
     }
 
     return 
+  }
+
+  createProduct(form: NgForm){
+
+    console.log(form.value)//{datos del formulario}
+
+    let {name, description} = form.value
+
+    if(!name || !description) return alert("Diligencie por favor todos los campos")
+
+    this.productService.createProduct(form.value).subscribe((res: any) => {
+      this.getProducts()
+      alert(res.msg)
+    })
+
   }
 
 }
