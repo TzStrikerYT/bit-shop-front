@@ -1,7 +1,7 @@
-<div class="container-fluid px-5">
-  <table class="table">
+<div class="container-fluid p-5">
+  <table class="table border">
     <thead>
-      <tr>
+      <tr class="text-center bg-dark text-white">
         <th>Nombre</th>
         <th (click)="this.orderByPrice()" style="cursor: pointer">Precio</th>
         <th>Stock</th>
@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of this.productService.products">
+      <tr class="text-center" *ngFor="let product of this.productService.products">
         <td>{{ product.name }}</td>
         <td>{{ product.price }}</td>
         <td>{{ product.stock }}</td>
@@ -19,7 +19,18 @@
             "#" + keyword + " "
           }}</span>
         </td>
-        <td></td>
+        <td>
+          <div class="d-flex justify-content-evenly">
+            <i 
+              class="material-icons text-danger"
+              style="cursor: pointer;"
+              (click)="this.deleteProduct(product._id, product.name)"
+            >
+              delete_forever
+            </i>
+            <i class="material-icons text-success" style="cursor: pointer;" (click)="this.fillForm(product)">edit</i>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -30,6 +41,9 @@
     <h3 class="text-center pb-3">Administrador de productos</h3>
 
     <form #productForm="ngForm">
+
+      <input type="hidden" id="_id" name="_id" [ngModel]="this.productService.currentProduct._id">
+
       <div class="mb-3">
         <label for="name" class="form-label">Nombre</label>
         <input
@@ -87,7 +101,11 @@
       </div>
     </form>
 
-    <button class="btn btn-success" (click)="this.createProduct(productForm)">
+    <button
+      class="btn btn-success d-flex align-items-center"
+      (click)="this.createProduct(productForm)"
+    >
+      <i class="material-icons pe-2">save</i>
       Guardar
     </button>
   </div>
