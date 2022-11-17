@@ -9,8 +9,8 @@ import { Product } from '../models/product.model'
 export class ProductService {
 
   URL_API = "http://localhost:5000/product"
-  products: any
-  currentProduct: Product
+  products: any //listar los productos
+  currentProduct: Product //crear - actualizar - eliminar el formulario
 
   constructor(public http: HttpClient) { 
     this.currentProduct = new Product()
