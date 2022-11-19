@@ -28,11 +28,10 @@ export class LoginComponent implements OnInit {
 
     this.userService.login(email, password).subscribe(
       (res: any) => {
-        alert("Usuario logueado correctamente")
         //localStorage.setItem('llave', valor)
         localStorage.setItem("token", res.token)
         this.router.navigate(['/home'])
-        this.userService.decodeToken()
+
         // proteger las vistar contra los usuarios que no esten logueados
         //mostrar los datos en la barra de navegación
       },

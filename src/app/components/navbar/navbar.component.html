@@ -5,11 +5,25 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" [routerLink]="['/home']">Home</a>
-          <a class="nav-link" [routerLink]="['/admin']">Admin</a>
-          <a class="nav-link" [routerLink]="['/login']">Login</a>
-          <a class="nav-link" [routerLink]="['/signup']">Signup</a>
+        <div class="navbar-nav ms-auto d-flex align-items-center">
+          <a class="nav-link" [routerLink]="['/home']">Tienda</a>
+          <a class="nav-link" *ngIf="this.userService.isAdmin()" [routerLink]="['/admin']">Admin</a>
+
+          <div class="dropdown nav-link" *ngIf="this.userService.isLoggedIn()">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ this.userService.decodeToken().firstName + " " + this.userService.decodeToken().lastName}}
+            </a>
+          
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" style="cursor: pointer;">Configuración</a></li>
+              <li><a class="dropdown-item" href="#">Ver Perfil</a></li>
+              <hr class="dropdown-divider">
+              <li><a class="dropdown-item" (click)="this.userService.logOut()">Cerrar Sesión</a></li>
+            </ul>
+          </div>
+
+          <a class="nav-link" *ngIf="!this.userService.isLoggedIn()" [routerLink]="['/login']">Login</a>
+          <a class="nav-link" *ngIf="!this.userService.isLoggedIn()" [routerLink]="['/signup']">Signup</a>
         </div>
       </div>
     </div>

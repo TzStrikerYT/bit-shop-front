@@ -21,15 +21,13 @@ export class AdminComponent implements OnInit {
 
     response.subscribe((res: any) => {
       this.productService.products = res.data; //[{}{}{}{}] arreglo de productos
-      console.log(res);
+      
     });
   }
 
   orderByPrice() {
     let products = this.productService.products || [];
     let sortedProducts;
-
-    console.log('Ejecucion');
 
     if (products || products.length > 0) {
       sortedProducts = products.sort((a: any, b: any) =>
@@ -52,7 +50,7 @@ export class AdminComponent implements OnInit {
   }
 
   createProduct(form: NgForm) {
-    console.log(form.value); //{datos del formulario}
+    //{datos del formulario}
 
     if(form.value._id){
       this.updateProduct(form.value)
