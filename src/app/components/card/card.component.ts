@@ -16,6 +16,7 @@ export class CardComponent implements OnInit {
   @Input() cardSize: string | undefined
   @Input() stock: number | undefined
   @Input() itemId: string | undefined
+  @Input() price: string | undefined
   // @Input() options: any
   // /*{
   //   title: "",
@@ -30,7 +31,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  buy(id: string = "", name: string = "", image: string = "", description: string = ""): void{
+  buy(id: string = "", name: string = "", image: string = "", description: string = "", price: string = ""): void{
 
     let isFilledChart = localStorage.getItem('productChart')
 
@@ -44,7 +45,7 @@ export class CardComponent implements OnInit {
 
       //agregar el valor nuevo a la lista
 
-      obj.push({id, name, image, description})
+      obj.push({id, name, image, description, productCount: 1, price})
       
       //convertilo en string
       let string = JSON.stringify(obj)
@@ -57,7 +58,7 @@ export class CardComponent implements OnInit {
     // un valor nuevo
 
     //armar el objeto en una lista vacia
-    let toSave = [{id, name, image, description}]
+    let toSave = [{id, name, image, description, productCount: 1, price}]
 
     let string = JSON.stringify(toSave) || ""
 

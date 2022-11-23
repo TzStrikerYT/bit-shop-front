@@ -13,6 +13,7 @@
   <app-card
     *ngFor="let product of this.productService.products"
     itemId="{{ product._id }}"
+    price="{{product.price}}"
     title="{{ product.name }}"
     description="{{ product.description }}"
     btnColor="success"

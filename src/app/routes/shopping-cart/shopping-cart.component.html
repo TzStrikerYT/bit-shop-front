@@ -5,7 +5,15 @@
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
           <p class="card-text">{{product.description}}</p>
-          <button class="btn btn-danger" (click)="this.deleteFromCart(product.id)">Elimanr</button>
+          <h5 class="card-title">{{"$ " + product.price}}</h5>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-danger" (click)="this.deleteFromCart(product.id)">Elimanr</button>
+            <div class="d-flex justify-content-center align-items-center">
+                <i class="material-icons text-primary m-1" (click)="this.productsCount('+', product.id)" style="cursor: pointer;">add</i>
+                <p class="m-1">{{product.productCount}}</p>
+                <i class="material-icons text-primary m-1" (click)="this.productsCount('-', product.id)" style="cursor: pointer;">remove</i>
+            </div>
+          </div>
         </div>
       </div>
 </div>
