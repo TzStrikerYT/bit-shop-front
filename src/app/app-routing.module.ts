@@ -6,6 +6,7 @@ import { AdminComponent } from './routes/admin/admin.component';
 import { HomeComponent } from './routes/home/home.component';
 import { LoginComponent } from './routes/login/login.component';
 import { Page404Component } from './routes/page404/page404.component';
+import { ShoppingCartComponent } from './routes/shopping-cart/shopping-cart.component';
 import { SignupComponent } from './routes/signup/signup.component'
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: "admin", component: AdminComponent, canActivate: [AdminGuard]},
   {path: "signup", component: SignupComponent},
   {path: "login", component: LoginComponent},
+  {path: 'shopping-cart', component: ShoppingCartComponent},
 
   //siempre de ultimas la pagina 404 que te dice si la ruta no existe
   {path: "**", component: Page404Component},
